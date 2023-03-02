@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
+    <meta charset="utf-8" />
+    <title>Language Translator | CodingNepal</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Language Translator</title>
+    <!-- Font Awesome CDN Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -16,15 +18,15 @@
         <div class="text-input">
           <textarea
             spellcheck="false"
+            class="from-text"
             placeholder="Enter text"
-            class="fromText"
           ></textarea>
           <textarea
             spellcheck="false"
-            placeholder="Translation"
-            class="toText"
             readonly
             disabled
+            class="to-text"
+            placeholder="Translation"
           ></textarea>
         </div>
         <ul class="controls">
@@ -35,14 +37,12 @@
             </div>
             <select></select>
           </li>
-          <li class="exchange">
-            <i class="fa fa-exchange-alt"></i>
-          </li>
+          <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
           <li class="row to">
             <select></select>
             <div class="icons">
-              <i id="to" class="fa fa-volume-up"> </i>
-              <i id="to" class="fa fas fa-copy"></i>
+              <i id="to" class="fas fa-volume-up"></i>
+              <i id="to" class="fas fa-copy"></i>
             </div>
           </li>
         </ul>
@@ -50,5 +50,6 @@
       <button>Translate Text</button>
     </div>
     <script src="languages.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
