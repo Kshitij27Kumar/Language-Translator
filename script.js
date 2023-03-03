@@ -46,3 +46,26 @@ translateBtn.addEventListener('click', () => {
       toText.setAttribute('placeholder', 'Translation')
     })
 })
+
+icons.forEach((icon) => {
+  icon.addEventListener('click', ({ target }) => {
+    if (!fromText.value || !toText.value) return
+    if (target.classList.contains('fa-copy')) {
+      if (target.id == 'from') {
+        navigator.clipboard.writeText(fromText.value)
+      } else {
+        navigator.clipboard.writeText(toText.value)
+      }
+    } else {
+      let speech
+      if (target.id == 'from') {
+        speech = new SpeechSynthesisUtterance(fromText.value)
+        speech.lang = selectTag[0].value
+      } else {
+        speech = new SpeechSynthesisUtterance(toText.value)
+        speech.lang = selectTag[1].value
+      }
+      speechSynthesis.speak(speech)
+    }
+  })
+})
